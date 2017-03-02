@@ -1,0 +1,12 @@
+{
+  "name": "PortfolioWebsite",
+  "version": "0.1.0",
+  "author": "Doneal Bercier",
+  "private": true,
+  "devDependencies": {
+    "animate.css": "*"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.2"
+  }
+}

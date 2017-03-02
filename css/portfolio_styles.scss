@@ -1,0 +1,139 @@
+//Variables
+$bgColor: white;
+$flairColor: #9ad3de;
+$splashColor: linear-gradient(to right bottom, #c9c9c9, #89bdd3);
+$break-small: 700px;
+$break-large: 1200px;
+$main-font: 'Raleway', sans-serif;;
+$splash-words:#c9c9c9;
+//=======================
+
+.border{
+  border: 2px solid black;
+}
+
+
+body{
+  background-color: $bgColor;
+  margin:0 auto;
+  font-family: $main-font;
+}
+
+
+.header{
+  background-color: white;
+  width:100%;
+  height:75px;
+  margin:0 auto;
+  position:fixed;
+  top:0px;
+  display:inline-flex;
+
+  h1{
+    color: $splash-words;
+    line-height: 50px;
+
+  }
+
+  a{
+    text-decoration:none;
+    font-size:25px;
+    margin:20px;
+    margin-left:0px;
+    margin-right:0px;
+    padding:5px;
+    color:$splash-words;
+
+  }
+}
+
+    #end{
+      padding-right: 200px;
+      @media (max-width: $break-small) {
+        padding-right:0px;
+
+      }
+    }
+
+.content{
+  background: white;
+  height: inherit;
+  width: 100%;
+  margin:10px auto;
+
+}
+
+.name{
+  padding:auto;
+  margin:auto;
+margin-left: 300px;
+  padding:10px;
+  font-size:40px;
+
+  transition-duration: 1s;
+
+  @media (max-width: $break-small) {
+    margin-left:0px
+
+  }
+}
+
+.flair{
+  color:$flairColor;
+}
+
+.splash-words{
+
+  font-size:290%;
+  color:white;
+  text-shadow: -1px 0 $flairColor, 0 1px  $flairColor, 1px 0 $flairColor, 0 -1px $flairColor;
+
+}
+
+.splash-img{
+  margin: 100px auto;
+  width:100%;
+  height:400px;
+  background-image:$splashColor;
+  text-align: center;
+
+  h1{
+    vertical-align:middle;
+    display:inline-block;
+    margin-bottom:auto;
+  }
+
+  h2{
+    vertical-align:middle;
+    display:inline-block;
+    margin: 0 auto;
+  }
+
+  span{
+    color:$flairColor;
+  }
+
+}
+
+.web-br{
+  height:50px;
+}
+
+#slide{
+  font-size:50px;
+  border-radius: 50%;
+  width:70px;
+  height:70px;
+  background-color:rgba(0,0,0,0.1);
+  color:white;
+  border-style:solid;
+}
+
+@media (max-width: $break-small){
+
+  .splash-words h1,h2{
+    margin-top:30%;
+    font-size:100%;
+    overflow:hidden;
+  }
+}

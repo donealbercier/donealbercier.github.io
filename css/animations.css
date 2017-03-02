@@ -1,0 +1,38 @@
+.fadeInt {
+-webkit-animation-name: fadeIn;
+animation-name: fadeIn;
+-webkit-animation-duration: 3s;
+animation-duration: 3s;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;
+
+transition:
+color 1s,
+font 1s .2s;
+}
+
+.fadeInt:hover{
+  color:white;
+  font-size:120%;
+}
+
+@-webkit-keyframes fadeIn {
+0% {opacity: 1;
+
+}
+50% {
+  opacity: 0;
+}
+100% {opacity: 1;
+}
+}
+@keyframes fadeIn {
+0% {opacity: 1;
+
+}
+50% {
+  opacity: 0;
+}
+100% {opacity: 1;
+}
+}
