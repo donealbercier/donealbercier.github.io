@@ -1,29 +1,47 @@
 //Variables
 $bgColor: white;
-$flairColor: #9ad3de;
-$splashColor: linear-gradient(to right bottom, #c9c9c9, #89bdd3);
+$flairColor: #D2FF96;
+$secondary-color:#89bdd3;
+//$bodyGradient: linear-gradient(to right bottom, white, white, white, #89bdd3);
+$bodyGradient: $flairColor;
+$splashColor: linear-gradient(to right bottom, #00BCD4, #00BCD4 );
 $break-small: 700px;
 $break-large: 1200px;
 $main-font: 'Raleway', sans-serif;;
 $splash-words:#c9c9c9;
+
 //=======================
+
+
 
 .border{
   border: 2px solid black;
 }
-
+html {
+    height: 100%;
+}
+body {
+  transition-duration: 1s;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
 body{
-  background-color: $bgColor;
+  //background-color: $bgColor;
+    background: $bodyGradient;
   margin:0 auto;
   font-family: $main-font;
 }
 
 
 .header{
+  //make sure content passes UNDER header
+    z-index:2;
   background-color: white;
   width:100%;
-  height:75px;
+  height:97px;
   margin:0 auto;
   position:fixed;
   top:0px;
@@ -32,13 +50,17 @@ body{
   h1{
     color: $splash-words;
     line-height: 50px;
+    @media (max-width: $break-small) {
+      font-size:30px;
+
+    }
 
   }
 
   a{
     text-decoration:none;
     font-size:25px;
-    margin:20px;
+    margin-top:28px;
     margin-left:0px;
     margin-right:0px;
     padding:5px;
@@ -48,7 +70,7 @@ body{
 }
 
     #end{
-      padding-right: 200px;
+      padding-right: 10%;
       @media (max-width: $break-small) {
         padding-right:0px;
 
@@ -56,17 +78,16 @@ body{
     }
 
 .content{
-  background: white;
-  height: inherit;
   width: 100%;
   margin:10px auto;
-
+  position:relative;
+     z-index:1;
 }
 
 .name{
   padding:auto;
   margin:auto;
-margin-left: 300px;
+margin-left: 10%;
   padding:10px;
   font-size:40px;
 
@@ -92,11 +113,13 @@ margin-left: 300px;
 
 .splash-img{
   margin: 100px auto;
+  margin-bottom:0;
+  padding-bottom:0;
   width:100%;
   height:400px;
   background-image:$splashColor;
   text-align: center;
-
+  overflow:hidden;
   h1{
     vertical-align:middle;
     display:inline-block;
@@ -116,7 +139,7 @@ margin-left: 300px;
 }
 
 .web-br{
-  height:50px;
+  height: 60px;
 }
 
 #slide{
@@ -129,6 +152,7 @@ margin-left: 300px;
   border-style:solid;
 }
 
+
 @media (max-width: $break-small){
 
   .splash-words h1,h2{
@@ -136,4 +160,173 @@ margin-left: 300px;
     font-size:100%;
     overflow:hidden;
   }
+}
+
+//General class for centereing content
+.centered{
+  vertical-align:middle;
+  display:inline-block;
+  margin-bottom:10%;
+  margin-top:10%;
+  width:100%;
+  text-align: center;
+  overflow:hidden;
+  color:white;
+
+  h1{
+    color:white;
+    font-size:330%;
+  }
+
+  footer{
+    position:fixed;
+    margin-bottom: 0;
+  }
+}
+
+
+.fa:hover{
+  color:black;
+}
+
+//CSS for skills section
+.skills{
+  font-size:100%;
+  width:100%;
+  h1{
+    padding:0;
+    margin:0;
+  }
+
+  div{
+      display:inline-block;
+  }
+.skills-content{
+  overflow:hidden;
+  width:inherit;
+
+}
+
+  .skills-name{
+    div{
+    margin:50px;
+    width:50%;
+    float:left;
+    text-align: left;
+  }
+  }
+  .skills-level{
+    div{
+    margin-left: 10%;
+    width:50%;
+    justify-content: right;
+    float:right;
+  }
+  }
+
+  @media (max-width: $break-small) {
+    font-size:80%;
+
+
+  }
+
+}
+
+
+//CSS for Projects sections
+.projects{
+  padding-top:50px;
+  background:$splashColor;
+  font-size:100%;
+
+
+
+
+  h1{
+    margin:0;
+    padding:0;
+  }
+
+  .projects-embed{
+    width:60%;
+    ul{
+      text-align:center;
+      li{
+        text-align:center;
+      }
+    }
+    ul {
+    list-style: none;
+}
+
+li:before {
+    content: '> ';
+}
+  }
+
+}
+
+
+/* CSS for Contact Me Section */
+form{
+  justify-content: center;
+  display:block;
+
+  input{
+    background-color: white;
+    font-size:25px;
+    border:1px solid $flairColor;
+    height:70px;
+    color:$flairColor;
+    margin:auto;
+    padding:10px;
+    width:500px;
+
+    &:focus{
+      border:1px solid white;
+    }
+    &:hover{
+      background-color:rgba(255,255,255,0.5);
+    }
+  }
+  #submit{
+    max-width:200px;
+    padding:auto;
+  }
+
+}
+
+
+::-webkit-input-placeholder { /* Chrome */
+  margin-left:10px;
+  color: $flairColor;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: $flairColor;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $flairColor;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: $flairColor;
+  opacity: 1;
+}
+
+
+
+.project-technologies{
+  h2{
+    word-wrap:break-word;
+    margin:auto;
+    padding:1%;
+
+
+  }
+  width:50%;
+  float:left;
+}
+.project-description{
+  width:50%;
+  float:left;
 }
